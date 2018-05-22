@@ -70,6 +70,7 @@
         <main class="py-4">
             @yield('content')
             @yield('viewAccount')
+            @yield('viewProject')
         </main>
     </div>
 </body>

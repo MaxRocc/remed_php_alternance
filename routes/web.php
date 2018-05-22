@@ -19,3 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/viewAccount/{id}', 'AccountController@viewAccount');
+Route::get('/updateAccount/{id}', 'AccountController@updateAccount');
+
+Route::get('/viewProject', 'ProjectController@viewProject');
+Route::get('/updateProject/{id}', 'ProjectController@updateProject');

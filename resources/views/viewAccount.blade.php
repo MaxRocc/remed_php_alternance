@@ -19,7 +19,7 @@
                     <p>Your nom : {{$accountView->lastName}}</p>
                 </div>
             </div>
-            <br><button href="">View your account details</button><br><br>
+            <br><a href="">View your account details</a><br><br>
 
         </div>
     </div>
