@@ -24,7 +24,7 @@
                                 @endif
                             </div>
 
-                            <label for="firstName" class="col-md-4 col-form-label text-md-right">{{ __('Last name') }}</label>
+                            <label for="lastName" class="col-md-4 col-form-label text-md-right">{{ __('Last name') }}</label>
 
                             <div class="col-md-6">
                                 <input id="lastName" type="text" class="form-control{{ $errors->has('lastName') ? ' is-invalid' : '' }}" name="lastName" value="{{ old('lastName') }}" required autofocus>

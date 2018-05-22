@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('content')
+@section('viewAccount')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -13,10 +13,14 @@
                         </div>
                     @endif
 
-                    Tu es logged in !
+                    <h1>Welcome à you, {{$accountView->firstName}}</h1>
+
+                    <p>Your prénom : {{$accountView->firstName}}</p>
+                    <p>Your nom : {{$accountView->lastName}}</p>
                 </div>
             </div>
-            <br><a href="/viewAccount">View your account details</a><br><br>
+            <br><button href="">View your account details</button><br><br>
+
         </div>
     </div>
 </div>
