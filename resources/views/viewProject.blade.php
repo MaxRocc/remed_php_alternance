@@ -15,13 +15,11 @@
                         <h1>Visualize tes projects </h1><br>
                             <div>
                                 @foreach ($projectViews as $projectView)
-                                    <div><b>Titre :</b> {{ $projectView->nameProject }}</div><br>
+                                    <a href="/viewProjectDetails/{{ $projectView->id }}">Titre :<b>{{ $projectView->nameProject }}</b></a><br>
                                     <div>Contenu : {{ $projectView->contentProject }}</div><br>
-                                    <div>Auteur : {{ $projectView->authorProject }}</div><br>
+                                    <div><b>Auteur : </b>{{ $projectView->authorProject }}</div><br>
                                 @endforeach
                             </div>
-                        <a href="/updateProject"></a>
-
                     </div>
                 </div>
             </div>

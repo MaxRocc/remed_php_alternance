@@ -71,6 +71,10 @@
             @yield('content')
             @yield('viewAccount')
             @yield('viewProject')
+            @yield('viewProjectDetails')
+            @yield('updateProject')
+
+
         </main>
     </div>
 </body>
