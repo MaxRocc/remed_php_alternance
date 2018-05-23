@@ -73,8 +73,7 @@
             @yield('viewProject')
             @yield('viewProjectDetails')
             @yield('updateProject')
-
-
+            @yield('createProject')
         </main>
     </div>
 </body>

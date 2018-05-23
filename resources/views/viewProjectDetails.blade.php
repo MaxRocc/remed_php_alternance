@@ -8,14 +8,13 @@
                 <div class="card-body">
                     @if (session('status'))
                     <div class="alert alert-success">
-                        {{--{{ session('status') }}--}}
+                        {{ session('status') }}
                     </div>
                     @endif
-                    <h1>View Project "{{ $projectViewsDetails->nameProject }}"</h1><br>
-                    <p>{{ $projectViewsDetails->contentProject }}</p><br>
+                    <h1>View Projet "{{ $projectViewsDetails->nameProject }}"</h1><br>
+                    <p>Content : {{ $projectViewsDetails->contentProject }}</p><br>
                     <p>Auteur : {{ $projectViewsDetails->authorProject }}</p><br>
-                    <div>
-                    </div>
+                    <a href={{ route("edit",[$projectViewsDetails->id]) }} class="btn" type="button" >Editer le project "{{ $projectViewsDetails->nameProject }}"</a>
                 </div>
             </div>
         </div>

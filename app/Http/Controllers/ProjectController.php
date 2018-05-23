@@ -16,22 +16,33 @@ class ProjectController extends Controller
         return view('viewProjectDetails', ['projectViewsDetails'=>$projectViewsDetails]);
     }
 
-    public function createProject(array $input){
-        return Project::create([
-            'nameProject' => $input['nameProject'],
-            'contentProject' => $input['contentProject'],
-            'authorProject' => $input['authorProject'],
+    public function beforeCreateProject(){
+        return view('createProject');
+    }
+
+    public function createProject(Request $request){
+        $projectCreation = Project::create([
+            'nameProject'=>$request->nameProjectFromInput,
+            'contentProject'=>$request->contentProjectFromInput,
+            'authorProject'=>$request->authorProjectFromInput
         ]);
+        return redirect('/viewProjectDetails/'.$projectCreation->id);//redirect / retourne view - viewproject du détail
+    }
+
+    public function editProject($id){
+        $projectEdits=Project::find($id);
+        return view('editProject', compact('projectEdits'));
     }
 
     public function updateProject(Request $request, $id){
         $projectUpdates=Project::find($id);
-        $projectUpdates->fill([
+        $projectUpdates->update([
             'nameProject'=>$request->nameProjectFromInput,
             'contentProject'=>$request->contentProjectFromInput,
             'authorProject'=>$request->authorProjectFromInput
             ]);
-        return redirect('/viewProjectDetail');//redirect / retourne view - viewproject du détail
+        return redirect('/viewProjectDetails/'.$projectUpdates->id);//redirect / retourne view - viewproject du détail
     }
 }
+
 

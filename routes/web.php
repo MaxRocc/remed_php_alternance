@@ -21,11 +21,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/viewAccount/{id}', 'AccountController@viewAccount');
 Route::get('/updateAccount/{id}', 'AccountController@updateAccount');
 
+Route::get('/viewProject', 'ProjectController@viewProject')->name('viewAll');
+Route::get('/viewProjectDetails/{id}', 'ProjectController@viewProjectDetails')->name('details');
 
-
-
-Route::get('/viewProject', 'ProjectController@viewProject');
-Route::get('/viewProjectDetails/{id}', 'ProjectController@viewProjectDetails');
-
-//will I need an ID ?? Route::get('/createProject/{id}', 'ProjectController@createProject');
-Route::get('/updateProject/{id}', 'ProjectController@updateProject');
+Route::post('/createProject', 'ProjectController@createProject')->name('create');
+Route::get('/beforeCreateProject', 'ProjectController@beforeCreateProject')->name('beforeCreate');
+Route::get('/editProject/{id}', 'ProjectController@editProject')->name('edit');
+Route::put('/updateProject/{id}', 'ProjectController@updateProject')->name('update');
