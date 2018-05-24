@@ -18,11 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/viewAccount/{id}', 'AccountController@viewAccount');
-Route::get('/updateAccount/{id}', 'AccountController@updateAccount');
+Route::get('/viewAccount', 'AccountController@viewAccount')->middleware('auth');
 
 Route::get('/viewProject', 'ProjectController@viewProject')->name('viewAll');
 Route::get('/viewProjectDetails/{id}', 'ProjectController@viewProjectDetails')->name('details');
+Route::get('/viewAllProjects', 'ProjectController@viewAllProjects')->name('viewAllProjects');
 
 Route::post('/createProject', 'ProjectController@createProject')->name('create');
 Route::get('/beforeCreateProject', 'ProjectController@beforeCreateProject')->name('beforeCreate');

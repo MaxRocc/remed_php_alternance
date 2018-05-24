@@ -18,7 +18,8 @@ class CreateProjectsTable extends Migration
             $table->timestamps();
             $table->text('nameProject');
             $table->text('contentProject');
-            $table->text('authorProject');
+            $table->unsignedInteger('user_id');//relationship to the users table - "generation" of the foreign key
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

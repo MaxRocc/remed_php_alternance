@@ -13,7 +13,7 @@
                     @endif
                     <h1>View Projet "{{ $projectViewsDetails->nameProject }}"</h1><br>
                     <p>Content : {{ $projectViewsDetails->contentProject }}</p><br>
-                    <p>Auteur : {{ $projectViewsDetails->authorProject }}</p><br>
+                    <p>Auteur : {{ $projectViewsDetails->user_id }}</p><br>
                     <a href={{ route("edit",[$projectViewsDetails->id]) }} class="btn" type="button" >Editer le project "{{ $projectViewsDetails->nameProject }}"</a>
                 </div>
             </div>

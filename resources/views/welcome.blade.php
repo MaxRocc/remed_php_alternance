@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>L'art abstrait</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -81,8 +81,9 @@
                     Remédiation PHP
                 </div>
                 <div class="links">
-                    <div><a href="{{route('viewAll')}}">Visualiser vos projets de merde</a></div><br>
-                    <div><a href="{{route('beforeCreate')}}">Créer un nouveau projet de merde</a></div>
+                    <div><a href="{{route('viewAll')}}">Visualiser vos projets de merde</a></div>
+                    <div><a href="{{route('beforeCreate')}}">Créer un nouveau projet de merde</a></div><br>
+                    <div><a href="{{route('viewAllProjects')}}">View les projets de Everybody</a></div>
                 </div>
             </div>
         </div>

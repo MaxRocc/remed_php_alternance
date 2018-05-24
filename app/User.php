@@ -26,4 +26,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function projects(){//generating the "has many" (1 -> n) relationship with the project table
+
+        return $this->hasMany('App\Project');
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Project;
 
@@ -9,7 +10,14 @@ class ProjectController extends Controller
     public function viewProject()
     {
         $projectViews = Project::all();
-        return view('viewProject', ['projectViews' => $projectViews]);
+        $user = Auth::user();
+        return view('viewProject', compact('projectViews', 'user'));
+    }
+
+    public function viewAllProjects()
+    {
+        $projectViews = Project::all();
+        return view('viewAllProjects', compact('projectViews'));
     }
 
     public function viewProjectDetails($id)
@@ -28,7 +36,7 @@ class ProjectController extends Controller
         $projectCreation = Project::create([
             'nameProject' => $request->nameProjectFromInput,
             'contentProject' => $request->contentProjectFromInput,
-            'authorProject' => $request->authorProjectFromInput
+            'user_id' => Auth::id()
         ]);
         return redirect('/viewProjectDetails/' . $projectCreation->id);
     }
@@ -49,8 +57,4 @@ class ProjectController extends Controller
         ]);
         return redirect('/viewProjectDetails/' . $projectUpdates->id);//redirect / retourne view - viewproject du détail
     }
-
-    /*public function delete(){
-
-    }*/
 }

@@ -13,14 +13,14 @@
                             </div>
                         @endif
                         <h1>Visualize tes projects </h1><br>
-                            <div>
-                                @foreach ($projectViews as $projectView)
-                                    <a href="/viewProjectDetails/{{ $projectView->id }}">Titre :<b>{{ $projectView->nameProject }}</b></a><br>
-                                    <div>Contenu : {{ $projectView->contentProject }}</div><br>
-                                    <div><b>Auteur : </b>{{ $projectView->authorProject }}</div><br>
-                                    <p>**********************************************</p>
-                                @endforeach
-                            </div>
+                        <div>
+                            @foreach($user->projects as $project)
+                                <a href="/viewProjectDetails/{{ $project->id }}">Titre :<b>{{ $project->nameProject }}</b></a><br>
+                                <div>Contenu : {{ $project->contentProject }}</div><br>
+                                <div><b>Auteur : </b>{{ $project->user_id }}</div><br>
+                                <p>**********************************************</p>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
