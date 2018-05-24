@@ -18,6 +18,7 @@
                                     <a href="/viewProjectDetails/{{ $projectView->id }}">Titre :<b>{{ $projectView->nameProject }}</b></a><br>
                                     <div>Contenu : {{ $projectView->contentProject }}</div><br>
                                     <div><b>Auteur : </b>{{ $projectView->authorProject }}</div><br>
+                                    <p>**********************************************</p>
                                 @endforeach
                             </div>
                     </div>
